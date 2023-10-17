@@ -6,6 +6,16 @@ const app = Vue.createApp({
       confirmedName: '' // 실제로 출력되는 이름
     };
   },
+  // computed: 함수처럼 사용하는 것이 아니라 data property처럼 사용
+  computed: {
+    fullname() {
+      console.log('Running again...');
+      if (this.name === '') {
+        return '';
+      }
+      return this.name + '' + 'Lee';
+    }
+  },
   methods: {
     add(num) {
       // 메서드를 사용해 동적으로 출력하는 것이 아니라 이벤트가 발생하면 실행되도록 하려면 값을 반환해줄 필요 없음
