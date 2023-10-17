@@ -33,9 +33,9 @@
 
       <!-- <input type="text" v-bind:value="name" v-on:input="setName($event, 'Lee')"> -->
       <input type="text" v-model="name">
-      <button v-on:click="resetInput">Reset Input</button>
+      <button @click="resetInput">Reset Input</button>
       <p>Your name: {{ fullname }}</p>
-      <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
         <input type="text" />
         <button>Sign Up</button>
       </form>
