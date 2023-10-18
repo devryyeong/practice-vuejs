@@ -19,12 +19,13 @@
     <section id="styling">
       <div
         class="demo"
+        :class="boxAClasses"
         :style="{borderColor: boxASelected ? 'rebeccapurple' : '#ccc'}"
         @click="boxSelected('A')"
       ></div>
       <div :class="boxBSelected ? 'demo active' : 'demo'" @click="boxSelected('B')"></div>
       <!-- 동적으로 바인딩한 클래스 -->
-      <div :class="{demo: true, active:boxCSelected}" @click="boxSelected('C')"></div>
+      <div :class="['demo', {active: boxCSelected}]" @click="boxSelected('C')"></div>
     </section>
   </body>
 </html>
