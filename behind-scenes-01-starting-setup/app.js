@@ -13,6 +13,30 @@ const app = Vue.createApp({
       // this.message = this.currentUserInput;
       this.message = this.$refs.userText.value;
     },
+    beforeCreate() {
+      console.log("beforeCreate");
+    },
+    created() {
+      console.log("created");
+    },
+    brforeMount() {
+      console.log("brforeMount");
+    },
+    mounted() {
+      console.log("mounted");
+    },
+    brforeUpdate() {
+      console.log("beforeUpdate");
+    },
+    updated() {
+      console.log("updated");
+    },
+    beforeUnmount() {
+      console.log("beforeUnmount");
+    },
+    unmounted() {
+      console.log("unmounted");
+    }
   },
 });
 
@@ -28,7 +52,7 @@ const data = {
   longMessage: "I am brave, I am bruised. I am who I'm meant to be, ",
 };
 
-// setter 함수를 정의해서 proxy에 새 프로퍼티가 설정될 때마다 트리거됨.
+// setter 함수를 정의해서 proxy에 새 프로퍼티가 설정될 때마다 트리거된다.
 const handler = {
   set(target, key, value) {
     if (key === 'message') {
